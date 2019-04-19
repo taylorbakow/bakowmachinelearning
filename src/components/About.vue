@@ -8,7 +8,7 @@
                             <div class="content">
                                 <h1 class="title">About Us</h1>
                                 <h2>Our Algorithm</h2>
-                                <h4 class="subtitle">Check Out Our Machine Learning Model by Clicking <a href="https://gallery.cortanaintelligence.com/Experiment/Final-Taco-Beats-Zillow">here!</a></h4>
+                                <h4 class="subtitle">View Our Machine Learning Model by Clicking <a href="https://gallery.cortanaintelligence.com/Experiment/Final-Taco-Beats-Zillow">Here!</a></h4>
                                 <p class="content">
                                     Our algorithm is fed by a constant stream of housing data coming from sources that our team has scraped from the web. 
                                     This data is updated constantly to keep our algorithm as accurate and relevant as possible. Once the data passes through our 
