@@ -2,20 +2,32 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import HelloWorld from '@/components/HelloWorld'
 import Prediction from '@/components/Prediction'
+import ZillowAnalytics from '@/components/ZillowAnalytics'
+import About from '@/components/About'
 
 Vue.use(Router)
 
 export default new Router({
   routes: [
-    {
-      path: '/',
-      name: 'HelloWorld',
-      component: HelloWorld
-    },
+    // {
+    //   path: '/',
+    //   name: 'HelloWorld',
+    //   component: HelloWorld
+    // },
     {
       path: '/Prediction',
       name: 'Prediction',
       component: Prediction
-    }
+    },
+    {
+      path: '/',
+      name: 'ZillowAnalytics',
+      component: ZillowAnalytics
+    },
+    {
+      path: '/about',
+      name: 'About',
+      component: About
+    },
   ]
 })

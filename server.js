@@ -11,10 +11,10 @@ const port = process.env.PORT || 5000;
 const knex = require('knex')({
     client: 'mssql',
     connection: {
-        server: 'is415.database.windows.net',
-        user: 'is415',
-        password: 'Temporary415',
-        database: 'is415',
+        server: 'tacohojosql.database.windows.net',
+        user: 'Tacohojo123',
+        password: 'Tac0h0j0123!',
+        database: 'tacohojosql',
         options: {
             port: 1433,
             encrypt: true
@@ -23,22 +23,51 @@ const knex = require('knex')({
 });
 
 app.get('/api/seeAllData', (req, res) => {
-    knex('am_Products').select('*').then(r => {
+    knex('dbo.ZillowData').select('*').then(r => {
         res.status(200).json(r)
     })
 })
 
-app.get('/api/getUsers', (req, res) => {
-    knex('am_Products').select('reviewerID', 'reviewerName').distinct().limit(1000).then(r => {
-      res.status(200).json(r);
-    })
-  })
+// app.get('/api/getUsers', (req, res) => {
+//     knex('am_Products').select('reviewerID', 'reviewerName').distinct().limit(1000).then(r => {
+//       res.status(200).json(r);
+//     })
+//   })
   
-  app.get('/api/getProducts', (req, res) => {
-    knex('am_Products').select('asin', 'productName').distinct().limit(1000).then(r => {
-      res.status(200).json(r);
+//   app.get('/api/getProducts', (req, res) => {
+//     knex('am_Products').select('asin', 'productName').distinct().limit(1000).then(r => {
+//       res.status(200).json(r);
+//     })
+//   })
+
+  app.post('/api/PredictPriceSold', (req,res)=> {
+    let data = req.body;
+    let URL = 'https://ussouthcentral.services.azureml.net/workspaces/14f3c79a892f43f29415553cf9f8c5ff/services/02da1d029b85429782b53bf0ae84265b/execute?api-version=2.0&details=true';
+    let config = {
+      headers: {
+      'Authorization': 'Bearer ' + 'M2HwrdeOXI7eTVKuZS9YYYiyB9216a7KZy7PSSO4aEcTuwUSaHrRIuyOaCJY2QPZj8rPY2zYX5RCkHcELIJZvw==',
+      'Content-Type': 'application/json;charset=UTF-8',
+      "Access-Control-Allow-Origin": "*",
+      }
+  };
+    axios.post(URL, data, config).then(r => {
+      let PredictedSold = r.data.Results.output1.value.Values[0]; 
+      console.log(PredictedSold);
+      // knex('am_Products').select('reviewerName').whereIn('reviewerID', RelatedUsers).distinct().limit(5).then(response => {
+      //   console.log(response);
+      //   res.status(200).json(response);
+      // })
+
+      res.status(200).json(PredictedSold);
+    }).catch(err => {
+      res.status(500).json("Something went wrong")
     })
+  
   })
+
+
+  //Prediction api requests V
+
 
   app.post('/api/PredictRelatedUser', (req,res)=> {
     let data = req.body;

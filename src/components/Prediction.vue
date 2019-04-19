@@ -12,7 +12,7 @@
             <div class="columns">
                 <div class="column">
                     <h1 class="title">
-                        User Recommendation
+                        Related Users
                     </h1>
                     <select class="select is-info" v-model="selectedUser">
                         <option>Select User</option>
@@ -28,7 +28,7 @@
                 </div>
                 <div class="column">
                     <h1 class="title">
-                        Product Recommendation
+                        Related Products
                     </h1>
                     <select class="select is-info" v-model="selectedProduct">
                         <option>Select Product</option>
@@ -48,7 +48,7 @@
             <br/>
                 <div>
                     <h1 class="title">
-                        User-Item Recommendation
+                        Item Recommender
                     </h1>
                     <select class="select is-info" v-model="selectedUserItemUser">
                         <option>Select User</option>
