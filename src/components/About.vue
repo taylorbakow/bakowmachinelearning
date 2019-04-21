@@ -4,7 +4,7 @@
             <section class="articles" style="margin-top: 20px;">
                 <div class="columns">
                     <div class="column">
-                        <div class="card-content">
+                        <div class="card-content" style="width: 80%;">
                             <div class="content">
                                 <h1 class="title">About Us</h1>
                                 <h2>Our Algorithm</h2>

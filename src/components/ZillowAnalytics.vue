@@ -2,7 +2,7 @@
     <div>
         <div class="container" style="height: 650px;">
             <section class="articles" style="margin-top: 20px; margin-bottom: 20px;">
-                <div class="card-content">
+                <div class="card-content" style="width: 80%;">
                     <p class="content">
                             Our goal is to help house hunters in Utah determine the correct price of a home based on specifications and location. Simply enter your desired home specifications or your current home specifications (if selling) to get a better idea of the market value
                             of your home. <b style="font-size: 20px;">Our algorithm is proven to be on average 8% more accurate than Zillow's "Zestimates".</b> If you have any more questions about our process head over to our about page.
